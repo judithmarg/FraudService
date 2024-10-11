@@ -1,5 +1,14 @@
 spring:
   application:
     name: FraudService
+  datasource:
+    url: jdbc:mysql://localhost:3306/ms_blacklist
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 server:
   port: 8084
