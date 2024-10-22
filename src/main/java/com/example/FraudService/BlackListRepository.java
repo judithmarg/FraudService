@@ -1,7 +1,11 @@
 package com.example.FraudService;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.ArrayList;
 
+@Repository
 public class BlackListRepository {
     private static ArrayList<BlackCredit> blacks = new ArrayList<BlackCredit>();
 

@@ -2,7 +2,7 @@ spring:
   application:
     name: FraudService
   datasource:
-    url: jdbc:mysql://localhost:3306/ms_blacklist
+    url: jdbc:mysql://mysql:3306/ms_fraud_service
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -12,3 +12,14 @@ spring:
     show-sql: true
 server:
   port: 8084
+springdoc:
+  swagger-ui.path: /openapi/swagger-ui.html
+  api-docs.path: /openapi/v3/api-docs
+  packagesToScan: com.example.product
+  pathsToMatch: /**
+api:
+  responseCodes:
+    ok.description: OK
+    badRequest.description: Bad Request, invalid format of the request. See response message for more information
+    internalServer.description: Internal Server Error. See response message for more information
+
