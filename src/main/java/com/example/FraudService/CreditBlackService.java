@@ -7,8 +7,9 @@ import java.util.*;
 @Service
 public class CreditBlackService {
 
-    private List<String> blackListedCards = new ArrayList<>();
-    BlackListRepository blackListRepository;
+    private final List<String> blackListedCards = new ArrayList<>();
+    private final BlackListRepository blackListRepository;
+
     public CreditBlackService(BlackListRepository blackListRepository) {
         this.blackListRepository = blackListRepository;
     }

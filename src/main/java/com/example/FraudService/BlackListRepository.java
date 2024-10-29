@@ -1,13 +1,12 @@
 package com.example.FraudService;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 
 @Repository
 public class BlackListRepository {
-    private static ArrayList<BlackCredit> blacks = new ArrayList<BlackCredit>();
+    private static final ArrayList<BlackCredit> blacks = new ArrayList<BlackCredit>();
 
     static {
         blacks.add(
@@ -27,10 +26,15 @@ public class BlackListRepository {
     public boolean isIn(String card){
         boolean found = false;
         for (BlackCredit black : blacks) {
-          if(black.getNumber().equals(card)){
-              found = true;
-          }
+            if (black.getNumber().equals(card)) {
+                found = true;
+                break;
+            }
         }
         return found;
+    }
+
+    public void addCardToBlackList(BlackCredit card){
+        blacks.add(card);
     }
 }

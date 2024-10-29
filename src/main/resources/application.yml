@@ -1,17 +1,10 @@
 spring:
   application:
     name: FraudService
-  datasource:
-    url: jdbc:mysql://mysql:3306/ms_fraud_service
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
 server:
   port: 8084
+  error:
+    include-message: always
 springdoc:
   swagger-ui.path: /openapi/swagger-ui.html
   api-docs.path: /openapi/v3/api-docs
